@@ -51,10 +51,10 @@ namespace FixtureFactory
         /// <returns>returns a random string</returns>
         private string GetString()
         {
-            var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            var allowedChars = "abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNOPQRSTUVWXYZ0123456789";
             var random = new Random();
             return new string(
-                Enumerable.Repeat(chars, 32)
+                Enumerable.Repeat(allowedChars, 32)
                           .Select(s => s[random.Next(s.Length)])
                           .ToArray());
         }
@@ -101,13 +101,16 @@ namespace FixtureFactory
 
         /// <summary>
         /// Type: char
-        /// Range: U+0000 to U+ffff
+        /// Allowed chars: abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNOPQRSTUVWXYZ0123456789
         /// Size: Unicode 16-bit character
         /// </summary>
         /// <returns>returns a random char</returns>
         private char GetChar()
         {
-            return 'a';
+            var allowedChars = "abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNOPQRSTUVWXYZ0123456789";
+            var random = new Random();
+            int i = random.Next(0, allowedChars.Length - 1);
+            return allowedChars[i];
         }
 
         /// <summary>
