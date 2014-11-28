@@ -7,8 +7,8 @@
     <ProjectGuid>{C42E649F-F2E9-4D96-93B7-733FB5CE6C3B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FixtureFactory.Net</RootNamespace>
-    <AssemblyName>FixtureFactory.Net</AssemblyName>
+    <RootNamespace>FixtureFactory</RootNamespace>
+    <AssemblyName>FixtureFactory</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

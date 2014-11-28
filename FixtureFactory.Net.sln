@@ -5,7 +5,7 @@ VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FixtureFactory.Tests", "test\FixtureFactory.Tests\FixtureFactory.Tests.csproj", "{A30DCA5A-B65C-47D6-B314-A13BAFDEB126}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FixtureFactory.Net", "src\FixtureFactory.Net\FixtureFactory.Net.csproj", "{C42E649F-F2E9-4D96-93B7-733FB5CE6C3B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FixtureFactory", "src\FixtureFactory\FixtureFactory.csproj", "{C42E649F-F2E9-4D96-93B7-733FB5CE6C3B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

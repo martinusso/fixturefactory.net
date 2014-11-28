@@ -56,9 +56,9 @@
     <Compile Include="AssignValueTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\src\FixtureFactory.Net\FixtureFactory.Net.csproj">
+    <ProjectReference Include="..\..\src\FixtureFactory\FixtureFactory.csproj">
       <Project>{c42e649f-f2e9-4d96-93b7-733fb5ce6c3b}</Project>
-      <Name>FixtureFactory.Net</Name>
+      <Name>FixtureFactory</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>
