@@ -17,91 +17,106 @@ namespace FixtureFactory.Tests
         [TestMethod]
         public void ShouldReturnStringValue()
         {
-            ValidateValueByCorrectlyType(typeof(string));
+            var t = typeof(string);
+            ValidateValueByCorrectlyType(t);
         }
 
         [TestMethod]
         public void ShouldReturnBooleanValue()
         {
-            ValidateValueByCorrectlyType(typeof(bool));
+            var t = typeof(bool);
+            ValidateValueByCorrectlyType(t);
         }
 
         [TestMethod]
         public void ShouldReturnDateTimeValue()
         {
-            ValidateValueByCorrectlyType(typeof(DateTime));
+            var t = typeof(DateTime);
+            ValidateValueByCorrectlyType(t);
         }
 
         [TestMethod]
         public void ShouldReturnSByteValue()
         {
-            ValidateValueByCorrectlyType(typeof(sbyte));
+            var t = typeof(sbyte);
+            ValidateValueByCorrectlyType(t);
         }
         
         [TestMethod]
         public void ShouldReturnByteValue()
         {
-            ValidateValueByCorrectlyType(typeof(byte));
+            var t = typeof(byte);
+            ValidateValueByCorrectlyType(t);
         }
 
         [TestMethod]
         public void ShouldReturnCharValue()
         {
-            ValidateValueByCorrectlyType(typeof(char));
+            var t = typeof(char);
+            ValidateValueByCorrectlyType(t);
         }
 
         [TestMethod]
         public void ShouldReturnShortValue()
         {
-            ValidateValueByCorrectlyType(typeof(short));
+            var t = typeof(short);
+            ValidateValueByCorrectlyType(t);
         }
 
         [TestMethod]
         public void ShouldReturnUShortValue()
         {
-            ValidateValueByCorrectlyType(typeof(ushort));
+            var t = typeof(ushort);
+            ValidateValueByCorrectlyType(t);
         }
 
         [TestMethod]
         public void ShouldReturnIntegerValue()
         {
-            ValidateValueByCorrectlyType(typeof(int));
+            var t = typeof(int);
+            ValidateValueByCorrectlyType(t);
         }
 
         [TestMethod]
         public void ShouldReturnUIntValue()
         {
-            ValidateValueByCorrectlyType(typeof(uint));
+            var t = typeof(uint);
+            ValidateValueByCorrectlyType(t);
         }
 
         [TestMethod]
         public void ShouldReturnLongValue()
         {
-            ValidateValueByCorrectlyType(typeof(long));
+            var t = typeof(long);
+            ValidateValueByCorrectlyType(t);
         }
 
         [TestMethod]
         public void ShouldReturnULongValue()
         {
-            ValidateValueByCorrectlyType(typeof(ulong));
+            var t = typeof(ulong);
+            ValidateValueByCorrectlyType(t);
         }
 
         [TestMethod]
         public void ShouldReturnFloatValue()
         {
-            ValidateValueByCorrectlyType(typeof(float));
+            var t = typeof(float);
+            ValidateValueByCorrectlyType(t);
         }
 
         [TestMethod]
         public void ShouldReturnDoubleValue()
         {
-            ValidateValueByCorrectlyType(typeof(double));
+            var t = typeof(double);
+            ValidateValueByCorrectlyType(t);
         }
 
         [TestMethod]
         public void ShouldReturnDecimalValue()
         {
-            ValidateValueByCorrectlyType(typeof(decimal));
+            var t = typeof(decimal);
+            ValidateValueByCorrectlyType(t);
         }
 
         [TestMethod]
