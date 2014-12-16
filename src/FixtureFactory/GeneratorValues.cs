@@ -158,7 +158,9 @@ namespace FixtureFactory
         private uint GetUInt()
         {
             var random = new Random();
-            return 0;// random.Next(0, 4294967295);
+            uint thirtyBits = (uint)random.Next(1 << 30);
+            uint twoBits = (uint)random.Next(1 << 2);
+            return (thirtyBits << 2) | twoBits;
         }
 
         /// <summary>
