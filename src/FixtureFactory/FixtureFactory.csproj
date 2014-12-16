@@ -39,7 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AssignValue.cs" />
+    <Compile Include="GeneratorValues.cs" />
     <Compile Include="FakeObject.cs" />
     <Compile Include="FixtureFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

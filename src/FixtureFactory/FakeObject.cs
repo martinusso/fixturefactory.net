@@ -49,8 +49,8 @@ namespace FixtureFactory
 
         private object GetValueFor(Type t)
         {
-            var assigner = new AssignValue();
-            return assigner.GetValue(t);
+            var generator = new GeneratorValues();
+            return generator.GetValue(t);
         }
     }
 }

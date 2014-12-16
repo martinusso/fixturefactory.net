@@ -8,8 +8,8 @@ namespace FixtureFactory.Tests
     {
         private void ValidateValueByCorrectlyType(Type t)
         {
-            var assigner = new AssignValue();
-            var value = assigner.GetValue(t);
+            var generator = new GeneratorValues();
+            var value = generator.GetValue(t);
             Assert.IsInstanceOfType(value, t);
             Assert.IsNotNull(value);
         }
@@ -123,7 +123,7 @@ namespace FixtureFactory.Tests
         public void ShouldReturnArrayValue()
         {
             var t = typeof(Array);
-            var assigner = new AssignValue();
+            var assigner = new GeneratorValues();
             var value = assigner.GetValue(t);
             Assert.IsNull(value);
         }
@@ -132,7 +132,7 @@ namespace FixtureFactory.Tests
         public void ShouldReturnEnumValue()
         {
             var t = typeof(Enum);
-            var assigner = new AssignValue();
+            var assigner = new GeneratorValues();
             var value = assigner.GetValue(t);
             Assert.IsNull(value);
         }

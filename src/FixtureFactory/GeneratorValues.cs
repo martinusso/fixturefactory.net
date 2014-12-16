@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace FixtureFactory
 {
-    public class AssignValue
+    public class GeneratorValues
     {
         public object GetValue(Type type)
         {
