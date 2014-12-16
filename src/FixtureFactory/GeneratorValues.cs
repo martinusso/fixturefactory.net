@@ -171,8 +171,7 @@ namespace FixtureFactory
         /// <returns>returns a random long</returns>
         private long GetLong()
         {
-            var random = new Random();
-            return 0;// random.Next(-9223372036854775808, 9223372036854775807);
+            return (long)GetInt();
         }
 
         /// <summary>
@@ -183,8 +182,7 @@ namespace FixtureFactory
         /// <returns>returns a random ulong</returns>
         private ulong GetULong()
         {
-            var random = new Random();
-            return 0;// random.Next(0, 18446744073709551615);
+            return (ulong)GetUInt();
         }
 
         /// <summary>

@@ -29,6 +29,7 @@ namespace FixtureFactory
             for (int i = 0; i < fields.Length; i++)
             {
                 var fieldInfo = fields[i];
+
                 var f = type.GetField(fieldInfo.Name);
                 var value = GetValueFor(fieldInfo.FieldType);
                 f.SetValue(obj, value);
@@ -41,6 +42,7 @@ namespace FixtureFactory
             for (int i = 0; i < properties.Length; i++)
             {
                 var propInfo = properties[i];
+                
                 var f = type.GetProperty(propInfo.Name);
                 var value = GetValueFor(propInfo.PropertyType);
                 f.SetValue(obj, value);
