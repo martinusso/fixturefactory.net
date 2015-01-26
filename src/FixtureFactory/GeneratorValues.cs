@@ -5,6 +5,8 @@ namespace FixtureFactory
 {
     public class GeneratorValues
     {
+        private string _allowedChars = "abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNOPQRSTUVWXYZ0123456789";
+
         public object GetValue(Type type)
         {
             if (type == typeof(string))
@@ -51,10 +53,9 @@ namespace FixtureFactory
         /// <returns>returns a random string</returns>
         private string GetString()
         {
-            var allowedChars = "abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNOPQRSTUVWXYZ0123456789";
             var random = new Random();
             return new string(
-                Enumerable.Repeat(allowedChars, 32)
+                Enumerable.Repeat(this._allowedChars, 32)
                           .Select(s => s[random.Next(s.Length)])
                           .ToArray());
         }
@@ -107,10 +108,9 @@ namespace FixtureFactory
         /// <returns>returns a random char</returns>
         private char GetChar()
         {
-            var allowedChars = "abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNOPQRSTUVWXYZ0123456789";
             var random = new Random();
-            int i = random.Next(0, allowedChars.Length - 1);
-            return allowedChars[i];
+            int i = random.Next(0, this._allowedChars.Length - 1);
+            return _allowedChars[i];
         }
 
         /// <summary>

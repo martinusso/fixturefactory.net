@@ -7,16 +7,16 @@ namespace FixtureFactory
 {
     public class FakeObject
     {
-        private Type type;
+        private Type _type;
         
         public FakeObject(Type t)
         {
-            this.type = t;
+            this._type = t;
         }
 
         public object GetFake()
         {
-            var fake = Activator.CreateInstance(type);
+            var fake = Activator.CreateInstance(_type);
             AssignFields(fake);
             AssignProperties(fake);
             
@@ -30,7 +30,7 @@ namespace FixtureFactory
             {
                 var fieldInfo = fields[i];
 
-                var f = type.GetField(fieldInfo.Name);
+                var f = _type.GetField(fieldInfo.Name);
                 var value = GetValueFor(fieldInfo.FieldType);
                 f.SetValue(obj, value);
             }
@@ -43,7 +43,7 @@ namespace FixtureFactory
             {
                 var propInfo = properties[i];
                 
-                var f = type.GetProperty(propInfo.Name);
+                var f = _type.GetProperty(propInfo.Name);
                 var value = GetValueFor(propInfo.PropertyType);
                 f.SetValue(obj, value);
             }

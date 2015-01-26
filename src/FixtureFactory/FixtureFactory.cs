@@ -5,16 +5,16 @@ namespace FixtureFactory
 {
     public class FixtureFactory
     {
-        private static Dictionary<Type, FakeObject> warehouse = new Dictionary<Type, FakeObject>();
+        private static Dictionary<Type, FakeObject> _warehouse = new Dictionary<Type, FakeObject>();
 
         public static FakeObject Make(Type t)
         {
-            if (!warehouse.ContainsKey(t))
+            if (!_warehouse.ContainsKey(t))
             {
-                warehouse.Add(t, new FakeObject(t));
+                _warehouse.Add(t, new FakeObject(t));
             }
 
-            return warehouse[t];
+            return _warehouse[t];
         }
 
         public static FakeObject From(Type type)
