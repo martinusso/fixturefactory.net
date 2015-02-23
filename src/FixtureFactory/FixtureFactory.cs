@@ -5,7 +5,7 @@ namespace FixtureFactory
 {
     public class FixtureFactory
     {
-        private static Dictionary<Type, FakeObject> _warehouse = new Dictionary<Type, FakeObject>();
+        protected static Dictionary<Type, FakeObject> _warehouse = new Dictionary<Type, FakeObject>();
 
         public static FakeObject Make(Type t)
         {
@@ -15,11 +15,6 @@ namespace FixtureFactory
             }
 
             return _warehouse[t];
-        }
-
-        public static FakeObject From(Type type)
-        {
-            return Make(type);
         }
 
         public static T GetFakeOf<T>()
