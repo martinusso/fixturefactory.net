@@ -2,7 +2,7 @@
 
 Generator fake objects as test data.
 
-Important: Targeting and Running .NET Framework apps for version 4.5 and later.
+Important: Targeting and Running .NET Framework apps for version 4.5 and later. Incompatible with previous version.
 
 ## Contributing
 
