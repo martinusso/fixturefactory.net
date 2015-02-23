@@ -4,6 +4,9 @@ Generator fake objects as test data.
 
 Important: Targeting and Running .NET Framework apps for version 4.5 and later. Incompatible with previous version.
 
+## Installation
+coming soon...
+
 ## Contributing
 
 If you got something that's worth including into the project please [submit a Pull Request](https://github.com/martinusso/fixturefactory.net/pulls) or [open an issue](https://github.com/martinusso/fixturefactory.net/issues) for further discussion.
