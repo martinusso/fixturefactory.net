@@ -25,27 +25,44 @@ namespace FixtureFactory
 
         private void AssignFields(object obj) 
         {
-            var fields = obj.GetType().GetFields();
-            for (int i = 0; i < fields.Length; i++)
+            foreach (var f in obj.GetType().GetFields())
             {
-                var fieldInfo = fields[i];
-
-                var f = _type.GetField(fieldInfo.Name);
-                var value = GetValueFor(fieldInfo.FieldType);
-                f.SetValue(obj, value);
+                var fieldType = f.FieldType;
+                if (fieldType.IsPrimitive
+                    || fieldType == typeof(string)
+                    || fieldType == typeof(DateTime))
+                {
+                    var value = GetValueFor(fieldType);
+                    f.SetValue(obj, value);
+                }
+                else
+                {
+                    var child = new FakeObject(fieldType).GetFake();
+                    f.SetValue(obj, child);
+                }
             }
         }
 
         private void AssignProperties(object obj) 
         {
-            var properties = obj.GetType().GetProperties();
-            for (int i = 0; i < properties.Length; i++)
+            foreach (var p in obj.GetType().GetProperties())
             {
-                var propInfo = properties[i];
-                
-                var f = _type.GetProperty(propInfo.Name);
-                var value = GetValueFor(propInfo.PropertyType);
-                f.SetValue(obj, value);
+                var propType = p.PropertyType;
+                if (propType.IsPrimitive
+                    || propType == typeof(string)
+                    || propType == typeof(DateTime))
+                {
+                    var value = GetValueFor(propType);
+                    p.SetValue(obj, value);
+                }
+                else
+                {
+                    if (p.CanWrite)
+                    {
+                        var child = new FakeObject(propType).GetFake();
+                        p.SetValue(obj, child);
+                    }
+                }
             }
         }
 

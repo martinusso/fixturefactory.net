@@ -33,7 +33,38 @@ namespace FixtureFactory.Tests
         public void ShouldReturnObjectWithDateTimeValue()
         {
             var f = FixtureFactory.GetFakeOf<Person>();
-            Assert.IsNotNull(f.Birthday);
+            Assert.IsNotNull(f.DateOfBirth);
+        }
+
+        [TestMethod]
+        public void ShouldReturnObjectWithBooleanValue()
+        {
+            var f = FixtureFactory.GetFakeOf<Person>();
+            Assert.IsNotNull(f.Designate);
+        }
+
+        [TestMethod]
+        public void ShouldNotReturnPrivateFieldWithValue()
+        {
+            var f = FixtureFactory.GetFakeOf<Person>();
+            Assert.IsNull(f.GetPrivateId());
+        }
+
+        [TestMethod]
+        public void ShouldReturnPublicFieldWithValue()
+        {
+            var f = FixtureFactory.GetFakeOf<Person>();
+            Assert.IsNotNull(f.GetPublicId());
+        }
+
+        [TestMethod]
+        public void ShouldReturnChildObjectWithValues()
+        {
+            var f = FixtureFactory.GetFakeOf<Person>();
+            Assert.IsNotNull(f.AddressInfo.Street);
+            Assert.IsNotNull(f.AddressInfo.City);
+            Assert.IsNotNull(f.AddressInfo.State);
+            Assert.IsNotNull(f.AddressInfo.PostalCode);
         }
     }
 }
