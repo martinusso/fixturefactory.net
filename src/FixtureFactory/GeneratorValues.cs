@@ -77,7 +77,7 @@ namespace FixtureFactory
         /// <returns>returns a new DateTime</returns>
         private DateTime GetDateTime()
         {
-            return new DateTime();
+            return new DateTime(1899, 12, 31).AddDays(new Random().NextDouble());
         }
 
         /// <summary>
