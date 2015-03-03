@@ -17,30 +17,9 @@ namespace FixtureFactory
         public object GetFake()
         {
             var fake = Activator.CreateInstance(_type);
-            AssignFields(fake);
             AssignProperties(fake);
             
             return fake;
-        }
-
-        private void AssignFields(object obj) 
-        {
-            foreach (var f in obj.GetType().GetFields())
-            {
-                var fieldType = f.FieldType;
-                if (fieldType.IsPrimitive
-                    || fieldType == typeof(string)
-                    || fieldType == typeof(DateTime))
-                {
-                    var value = GetValueFor(fieldType);
-                    f.SetValue(obj, value);
-                }
-                else
-                {
-                    var child = new FakeObject(fieldType).GetFake();
-                    f.SetValue(obj, child);
-                }
-            }
         }
 
         private void AssignProperties(object obj) 

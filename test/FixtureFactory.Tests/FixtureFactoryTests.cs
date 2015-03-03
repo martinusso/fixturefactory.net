@@ -51,20 +51,6 @@ namespace FixtureFactory.Tests
         }
 
         [TestMethod]
-        public void ShouldNotReturnPrivateFieldWithValue()
-        {
-            var f = FixtureFactory.GetFakeOf<Person>();
-            Assert.IsNull(f.GetPrivateId());
-        }
-
-        [TestMethod]
-        public void ShouldReturnPublicFieldWithValue()
-        {
-            var f = FixtureFactory.GetFakeOf<Person>();
-            Assert.IsNotNull(f.GetPublicId());
-        }
-
-        [TestMethod]
         public void ShouldReturnChildObjectWithValues()
         {
             var f = FixtureFactory.GetFakeOf<Person>();
