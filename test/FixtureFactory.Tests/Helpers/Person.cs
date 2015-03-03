@@ -13,6 +13,7 @@ namespace FixtureFactory.Tests.Helpers
         public double Salary { get; set; }
         public bool Designate { get; set; }
         public Address AddressInfo { get; set; }
+        public Gender Gender { get; set; }
 
         public string GetPrivateId()
         {

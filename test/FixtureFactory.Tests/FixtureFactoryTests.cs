@@ -44,6 +44,13 @@ namespace FixtureFactory.Tests
         }
 
         [TestMethod]
+        public void ShouldReturnObjectWithEnumAssigned()
+        {
+            var f = FixtureFactory.GetFakeOf<Person>();
+            Assert.IsNotNull(f.Gender);
+        }
+
+        [TestMethod]
         public void ShouldNotReturnPrivateFieldWithValue()
         {
             var f = FixtureFactory.GetFakeOf<Person>();

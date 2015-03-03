@@ -55,6 +55,12 @@ namespace FixtureFactory
                     var value = GetValueFor(propType);
                     p.SetValue(obj, value);
                 }
+                else if (propType.IsEnum)
+                {
+                    var values = Enum.GetValues(propType);
+                    var randomEnum = values.GetValue(new Random().Next(values.Length));
+                    p.SetValue(obj, randomEnum, null);
+                }
                 else
                 {
                     if (p.CanWrite)
