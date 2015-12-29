@@ -6,7 +6,7 @@ Important: Targeting and Running .NET Framework apps for version 4.5 and later. 
 
 ## Installation
 
-I'm just waiting to finish some [issues](https://github.com/martinusso/fixturefactory.net/issues) (#1, #2 and #9) before I turn nuget publishing and commit again to make the release.
+I'm just waiting to finish some [issues](https://github.com/martinusso/fixturefactory.net/issues) ([#1](https://github.com/martinusso/fixturefactory.net/issues/1)~~, #2 and #9~~) before I turn nuget publishing and commit again to make the release.
 
 ## Contributing
 
