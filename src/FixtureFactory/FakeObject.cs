@@ -1,7 +1,7 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
 
 namespace FixtureFactory
 {
@@ -40,6 +40,9 @@ namespace FixtureFactory
                     var randomEnum = values.GetValue(new Random().Next(values.Length));
                     p.SetValue(obj, randomEnum, null);
                 }
+                else if (IsEnumerable(propType)) 
+                {
+                }
                 else
                 {
                     if (p.CanWrite)
@@ -55,6 +58,12 @@ namespace FixtureFactory
         {
             var generator = new GeneratorValues();
             return generator.GetValue(t);
+        }
+
+        private bool IsEnumerable(Type t)
+        {
+            return t.GetInterfaces().Contains(typeof(IEnumerable))
+                || t.GetInterfaces().Contains(typeof(IEnumerable<>));
         }
     }
 }

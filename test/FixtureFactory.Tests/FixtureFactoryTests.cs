@@ -1,6 +1,5 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Linq;
 using FixtureFactory.Tests.Helpers;
 
 namespace FixtureFactory.Tests
@@ -9,45 +8,15 @@ namespace FixtureFactory.Tests
     public class FixtureFactoryTests
     {
         [TestMethod]
-        public void ShouldReturnObjectOfSameTypeWithGetFakeOfMethod()
+        public void TestGetFakeOf()
         {
             var f = FixtureFactory.GetFakeOf<Person>();
-            Assert.AreEqual(f.GetType(), typeof(Person));
-        }
-
-        [TestMethod]
-        public void ShouldReturnObjectWithStringValue()
-        {
-            var f = FixtureFactory.GetFakeOf<Person>();
-            Assert.IsNotNull(f.Name);
-        }
-
-        [TestMethod]
-        public void ShouldReturnObjectWithIntValue()
-        {
-            var f = FixtureFactory.GetFakeOf<Person>();
-            Assert.IsNotNull(f.Age);
-        }
-
-        [TestMethod]
-        public void ShouldReturnObjectWithDateTimeValue()
-        {
-            var f = FixtureFactory.GetFakeOf<Person>();
-            Assert.IsNotNull(f.DateOfBirth);
-        }
-
-        [TestMethod]
-        public void ShouldReturnObjectWithBooleanValue()
-        {
-            var f = FixtureFactory.GetFakeOf<Person>();
-            Assert.IsNotNull(f.Designate);
-        }
-
-        [TestMethod]
-        public void ShouldReturnObjectWithEnumAssigned()
-        {
-            var f = FixtureFactory.GetFakeOf<Person>();
-            Assert.IsNotNull(f.Gender);
+            Assert.AreEqual(f.GetType(), typeof(Person), "Should return an object of same type with GetFakeOf method");
+            Assert.IsNotNull(f.Name, "invalid Name");
+            Assert.IsNotNull(f.Age, "invalid Age");
+            Assert.IsNotNull(f.DateOfBirth, "Invalid DateOfBirth");
+            Assert.IsNotNull(f.Designate, "Invalid Designate");
+            Assert.IsNotNull(f.Gender, "Invalid Gender");
         }
 
         [TestMethod]
